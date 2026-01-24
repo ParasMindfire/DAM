@@ -1,0 +1,7 @@
+export enum AssetStatus {
+  UPLOADING = 'UPLOADING',
+  PROCESSING = 'PROCESSING',
+  READY = 'READY',
+  FAILED = 'FAILED',
+  ARCHIVED = 'ARCHIVED',
+}
