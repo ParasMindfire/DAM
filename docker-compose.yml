@@ -5,9 +5,9 @@ services:
     image: postgres:16-alpine
     container_name: dam-postgres
     environment:
-      POSTGRES_DB: dam_db
-      POSTGRES_USER: dam_user
-      POSTGRES_PASSWORD: dam_password
+      POSTGRES_DB: DAM
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Pa1ra2@3
     ports:
       - "5432:5432"
     volumes:

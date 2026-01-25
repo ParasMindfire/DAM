@@ -9,3 +9,9 @@ export interface IRegisterFormProps {
   onError?: (error: Error) => void;
   redirectPath?: string;
 }
+
+export interface IJwtPayload {
+  userId: string;
+  email: string;
+  role: string;
+}
