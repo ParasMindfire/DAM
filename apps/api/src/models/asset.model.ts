@@ -19,16 +19,16 @@ export class Asset {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @Column({ name: 'file_name' })
+  @Column({ name: 'file_name', type: 'varchar' }) // Added type: 'varchar'
   fileName!: string;
 
-  @Column({ name: 'original_name' })
+  @Column({ name: 'original_name', type: 'varchar' }) // Added type: 'varchar'
   originalName!: string;
 
   @Column({ name: 'file_size', type: 'bigint' })
   fileSize!: number;
 
-  @Column({ name: 'mime_type' })
+  @Column({ name: 'mime_type', type: 'varchar' }) // Added type: 'varchar'
   mimeType!: string;
 
   @Column({
@@ -47,22 +47,22 @@ export class Asset {
   @Column({ type: 'jsonb' })
   metadata!: IAssetMetadata;
 
-  @Column({ name: 'thumbnail_url', nullable: true })
+  @Column({ name: 'thumbnail_url', type: 'varchar', nullable: true }) // Added type: 'varchar'
   thumbnailUrl?: string;
 
-  @Column({ name: 'preview_url', nullable: true })
+  @Column({ name: 'preview_url', type: 'varchar', nullable: true }) // Added type: 'varchar'
   previewUrl?: string;
 
-  @Column({ name: 'download_url' })
+  @Column({ name: 'download_url', type: 'varchar' }) // Added type: 'varchar'
   downloadUrl!: string;
 
   @Column({ type: 'simple-array', default: '' })
   tags!: string[];
 
-  @Column({ nullable: true })
+  @Column({ type: 'text', nullable: true }) // Added type: 'text'
   description?: string;
 
-  @Column({ name: 'uploaded_by' })
+  @Column({ name: 'uploaded_by', type: 'uuid' }) // Added type: 'uuid'
   uploadedBy!: string;
 
   @ManyToOne(() => User)

@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import { logger } from '@dam/logger';
 import { errorMiddleware } from './middleware';
 import { authRoutes, assetRoutes, collectionRoutes } from './routes';
+import 'reflect-metadata';
 
 export const createApp = (): Express => {
   const app = express();

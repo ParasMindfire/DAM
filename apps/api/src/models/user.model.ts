@@ -7,7 +7,7 @@ import {
   BeforeInsert,
   BeforeUpdate,
 } from 'typeorm';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { UserRole, APP_CONSTANTS } from '@dam/shared';
 
 @Entity('users')
@@ -15,16 +15,16 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @Column({ unique: true })
+  @Column({ type: 'varchar', unique: true }) // Added type: 'varchar'
   email!: string;
 
-  @Column()
+  @Column({ type: 'varchar' }) // Added type: 'varchar'
   password!: string;
 
-  @Column({ name: 'first_name' })
+  @Column({ name: 'first_name', type: 'varchar' }) // Added type: 'varchar'
   firstName!: string;
 
-  @Column({ name: 'last_name' })
+  @Column({ name: 'last_name', type: 'varchar' }) // Added type: 'varchar'
   lastName!: string;
 
   @Column({
@@ -34,7 +34,7 @@ export class User {
   })
   role!: UserRole;
 
-  @Column({ name: 'is_active', default: true })
+  @Column({ name: 'is_active', type: 'boolean', default: true }) // Added type: 'boolean'
   isActive!: boolean;
 
   @CreateDateColumn({ name: 'created_at' })

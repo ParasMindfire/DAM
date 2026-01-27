@@ -14,23 +14,23 @@ export class Collection {
   @PrimaryGeneratedColumn('uuid')
   id!: string;
 
-  @Column()
+  @Column({ type: 'varchar' }) // Added type: 'varchar'
   name!: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'text', nullable: true }) // Added type: 'text'
   description?: string;
 
   @Column({ name: 'asset_ids', type: 'simple-array', default: '' })
   assetIds!: string[];
 
-  @Column({ name: 'created_by' })
+  @Column({ name: 'created_by', type: 'uuid' }) // Added type: 'uuid'
   createdBy!: string;
 
   @ManyToOne(() => User)
   @JoinColumn({ name: 'created_by' })
   creator!: User;
 
-  @Column({ name: 'is_public', default: false })
+  @Column({ name: 'is_public', type: 'boolean', default: false }) // Added type: 'boolean'
   isPublic!: boolean;
 
   @CreateDateColumn({ name: 'created_at' })
