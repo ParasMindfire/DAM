@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter ./apps/* dev",
+    "dev": "pnpm --filter ./apps/api --filter ./apps/web dev",
+    "dev:api": "pnpm --filter ./apps/api dev",
+    "dev:web": "pnpm --filter ./apps/web dev",
+    "dev:worker": "pnpm --filter ./apps/worker dev",
+    "dev:all": "pnpm --filter ./apps/* dev",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
